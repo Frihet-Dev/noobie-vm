@@ -1,6 +1,5 @@
 #include "vm.h"
 #include <string.h>
-#include <stdio.h>
 
 #define MAKE_READ(T) \
     T read_##T(virtual_machine *vm) { \
