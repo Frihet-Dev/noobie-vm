@@ -10,6 +10,8 @@
 #define R6 6
 #define R7 7
 
+void print_vm_state(virtual_machine *vm);
+
 int main(void) {
     virtual_machine vm;
     initialize(&vm);
@@ -23,11 +25,16 @@ int main(void) {
         vm.memory[i] = buf[i];
 
     do {
-        for (int i = 0; i < REGISTERS_COUNT; i++) {
-            printf("r%d = 0x%08x ", i, vm.registers[i]);
-        }
-        printf("ci = 0x%08x\n", vm.current_instruction);        
+        print_vm_state(&vm);       
     } while (execute_next_instruction(&vm));
     
     return 0;
+}
+
+void print_vm_state(virtual_machine *vm) {
+    printf("0x%08x: ", vm->current_instruction);
+    for (int i = 0; i < REGISTERS_COUNT; i++) {
+        printf("r%d = 0x%08x ", i, vm->registers[i]);
+    }
+    printf("\n");  
 }
