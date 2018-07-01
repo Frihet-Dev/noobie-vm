@@ -19,7 +19,12 @@ int main(void) {
     vm.registers[R0] = 0x17;
     vm.registers[R1] = 0x29;
 
-    unsigned char buf[] = { SUB, R0, R1, MOV, R7, R0, ADD, R7, 0xaf, 0xf0, 0x00, 0x00, HALT };
+    unsigned char buf[] = {
+        SUB, R0, R1,
+        MOV, R7, R0,
+        ADD, R7, 0xaf, 0xf0, 0x00, 0x00,
+        HALT
+    };
     
     for (int i = 0; i < sizeof(buf) / sizeof(unsigned char); i++)
         vm.memory[i] = buf[i];
