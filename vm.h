@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-// Instruction set
+// Instruction set opcodes
 #define NOP 0x00
 #define XOR 0x01
 #define AND 0x02
