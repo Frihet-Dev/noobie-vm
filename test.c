@@ -22,7 +22,8 @@ int main(void) {
     unsigned char buf[] = {
         SUB, R0, R1,
         MOV, R7, R0,
-        ADD, R7, 0xaf, 0xf0, 0x00, 0x00,
+        ANDI, R7, 0xaf, 0xf0, 0x00, 0x00,
+        ADD, R7, R0,
         HALT
     };
     
