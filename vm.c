@@ -3,7 +3,7 @@
 
 #define MAKE_READ(T) \
     T read_##T(virtual_machine *vm) { \
-        T x = vm->memory[vm->current_instruction]; \
+        T x = *(T *)(&vm->memory[vm->current_instruction]); \
         vm->current_instruction += sizeof(x); \
         return x; \
     }
