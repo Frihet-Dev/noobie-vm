@@ -14,6 +14,7 @@
 #define ADD 0x07
 #define SUB 0x08
 #define MOV 0x10
+#define MOVI 0x11
 #define HALT 0xFF
 
 #define REGISTERS_COUNT 8

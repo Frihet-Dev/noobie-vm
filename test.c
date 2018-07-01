@@ -16,10 +16,9 @@ int main(void) {
     virtual_machine vm;
     initialize(&vm);
 
-    vm.registers[R0] = 0x17;
-    vm.registers[R1] = 0x29;
-
     unsigned char buf[] = {
+        MOVI, R0, 0x17, 0x00, 0x00, 0x00,
+        MOVI, R1, 0x29, 0x00, 0x00, 0x00,
         SUB, R0, R1,
         MOV, R7, R0,
         ANDI, R7, 0xaf, 0xf0, 0x00, 0x00,
