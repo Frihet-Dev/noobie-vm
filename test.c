@@ -1,5 +1,6 @@
 #include "vm.h"
 #include <stdio.h>
+#include <string.h>
 
 #define R0 0
 #define R1 1
@@ -25,9 +26,8 @@ int main(void) {
         ADD, R7, R0,
         HALT
     };
-    
-    for (int i = 0; i < sizeof(buf) / sizeof(unsigned char); i++)
-        vm.memory[i] = buf[i];
+
+    memcpy(vm.memory, buf, sizeof(buf));
 
     do {
         print_vm_state(&vm);       
