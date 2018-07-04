@@ -70,12 +70,26 @@ uint8_t execute_next_instruction(virtual_machine *vm) {
             
             vm->registers[dst] += vm->registers[src];
             break;
-        }
+        }        
         case SUB: {
             uint8_t dst = read_uint8_t(vm);
             uint8_t src = read_uint8_t(vm);
             
             vm->registers[dst] -= vm->registers[src];
+            break;
+        }
+        case ADDI: {
+            uint8_t dst = read_uint8_t(vm);
+            word arg = read_word(vm);
+
+            vm->registers[dst] += arg;
+            break;
+        }
+        case SUBI: {
+            uint8_t dst = read_uint8_t(vm);
+            word arg = read_word(vm);
+
+            vm->registers[dst] -= arg;
             break;
         }
         case MOV: {

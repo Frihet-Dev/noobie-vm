@@ -22,8 +22,8 @@ int main(void) {
         MOVI, R1, 0x29, 0x00, 0x00, 0x00,
         SUB, R0, R1,
         MOV, R7, R0,
-        ANDI, R7, 0xaf, 0xf0, 0x00, 0x00,
-        ADD, R7, R0,
+        ADDI, R7, 0xaf, 0xf0, 0x00, 0x00,
+        SUB, R7, R1,
         HALT
     };
 

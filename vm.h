@@ -13,6 +13,8 @@
 #define ORI 0x06
 #define ADD 0x07
 #define SUB 0x08
+#define ADDI 0x09
+#define SUBI 0x0A
 #define MOV 0x10
 #define MOVI 0x11
 #define HALT 0xFF
