@@ -4,7 +4,7 @@
 #define MAKE_READ(T) \
     T read_##T(virtual_machine *vm) { \
         T x = *(T *)(&vm->memory[vm->current_instruction]); \
-        vm->current_instruction += sizeof(x); \
+        vm->current_instruction += sizeof(T); \
         return x; \
     }
 
@@ -70,7 +70,7 @@ uint8_t execute_next_instruction(virtual_machine *vm) {
             
             vm->registers[dst] += vm->registers[src];
             break;
-        }        
+        }
         case SUB: {
             uint8_t dst = read_uint8_t(vm);
             uint8_t src = read_uint8_t(vm);
